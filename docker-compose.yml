@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  travel-database:
+    image: postgres
+    container_name: travel-database
+    volumes:
+    - ${DB_PATH}:/var/lib/postgresql/data
+    ports:
+    - 5432:5432
+    environment:
+      POSTGRES_DB: mas1
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      PGDATA: ${DB_PATH}
